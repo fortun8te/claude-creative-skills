@@ -1,5 +1,5 @@
 ---
-name: brainstorming
+name: michael:brainstorming
 description: Use after research to generate strategy. Takes research findings and turns them into 2-3 real approaches (not idea lists). Each approach has tradeoffs. Includes adversarial thinking (reframe + premortem). Returns a recommendation with confidence level.
 ---
 

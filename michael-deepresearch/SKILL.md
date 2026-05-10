@@ -1,9 +1,9 @@
 ---
-name: research
+name: michael:deepresearch
 description: Use before strategy, positioning, or creative work. Combines fact-finding (what's true) with creative positioning (what others miss). Deploys parallel research agents, marks confidence levels, uncovers positioning gaps. Returns grounded insights + actionable angles. Fast, cost-efficient.
 ---
 
-# Research
+# Deep Research
 
 Find what's true about a problem, then find what others missed.
 

@@ -2,6 +2,8 @@
 
 ## Test Scenarios
 
+**Skill Order**: `/michael:deepresearch` → `/michael:brainstorming` → `/michael:executeplan`
+
 ### Scenario 1: Deep Research (Realistic Pressure Test)
 
 **Prompt**: "Research vertical SaaS adoption in legal tech. Why are vertical legal SaaS tools winning vs. horizontal legal practices management systems?"
@@ -18,31 +20,33 @@
 
 ---
 
-### Scenario 2: Creative Research (Realistic Pressure Test)
+### Scenario 2: Brainstorming (Realistic Pressure Test)
 
 **Prompt** (pre-supplied research): 
 ```
 Deep-research findings:
 - Vertical legal SaaS growing 25% YoY vs. horizontal 8% YoY
 - Compliance + integrations are key differentiation
-- Adoption barrier: long sales cycles (6-12 months for enterprise deals)
+- Adoption barrier: long sales cycles (9-12 months for enterprise deals)
 
-Now, find 5 precedents from other domains that won despite constraints. 
-What positioning gaps do competitors miss?
+Real decision: We're building a legal tech product for small law firms. 
+Should we target solo practitioners, small firms (2-10 people), or mid-market (10-50 people)?
+
+Generate 2-3 worldview-axis approaches with real tradeoffs.
 ```
 
 **Success Criteria**:
-- ✓ Core constraint identified (sales cycles, compliance, expertise gap)
-- ✓ 5+ cross-domain precedents found (not just legal tech competitors)
-- ✓ Positioning principles extracted (3-5, actionable)
-- ✓ Positioning gaps identified (what competitors don't own)
-- ✓ Divergence pass attempted (red-team the findings)
+- ✓ Decision reframed (what's actually at stake?)
+- ✓ 2-3 worldview approaches generated (not generic features)
+- ✓ Approaches have real tradeoffs (not all positive)
+- ✓ Adversarial thinking applied (reframe, premortem, red-team)
+- ✓ One winner recommended with confidence level
 
-**Expected output**: ~2000 words; 5 precedents with positioning flips; 3 gaps; divergence notes
+**Expected output**: 3 approaches (500 words each); adversarial findings documented; recommendation with confidence signal
 
 ---
 
-### Scenario 3: Brainstorming (Realistic Pressure Test)
+### Scenario 3: Execute-Plan (Realistic Pressure Test)
 
 **Prompt** (with research findings from Scenarios 1+2):
 ```
@@ -71,7 +75,7 @@ Generate 2-3 worldview-axis approaches with real tradeoffs. Run adversarial pre-
 
 ### Scenario 4: Execute Plan (Realistic Pressure Test)
 
-**Prompt** (spec from Scenario 3 brainstorming):
+**Prompt** (spec from Scenario 2 brainstorming):
 ```
 Spec: Develop landing page for legal tech product (small law firm focus).
 
@@ -103,12 +107,13 @@ Acceptance: Spec-compliant, copyedit-ready, brand-aligned
 
 ## Test Execution Order
 
-1. Run Scenario 1 (deep-research)
-2. Run Scenario 2 (creative-research) using Scenario 1 output
-3. Run Scenario 3 (brainstorming) using Scenario 1+2 output
-4. Run Scenario 4 (execute-plan) using Scenario 3 output
+1. Run Scenario 1 (michael:deepresearch)
+2. Run Scenario 2 (michael:brainstorming) using Scenario 1 output
+3. Run Scenario 3 (michael:executeplan) using Scenario 2 output
 
-This end-to-end flow tests skill composition: deep-research → creative-research → brainstorming → execute-plan.
+This end-to-end flow tests skill composition: deepresearch → brainstorming → executeplan.
+
+**Total end-to-end time**: ~60 minutes
 
 ---
 
@@ -116,10 +121,9 @@ This end-to-end flow tests skill composition: deep-research → creative-researc
 
 | Skill | Success Rate | Token Efficiency | Output Quality |
 |-------|--------------|------------------|-----------------|
-| deep-research | Need ≥3/4 criteria | <20K tokens | Fact-grounded, sources cited |
-| creative-research | Need ≥3/4 criteria | <15K tokens | Precedents novel, positioned |
-| brainstorming | Need ≥4/6 criteria | <20K tokens | Tradeoffs real, not lists |
-| execute-plan | Need ≥5/7 criteria | <25K tokens | Spec-compliant, no hallucinations |
+| michael:deepresearch | Need ≥5/6 criteria | <25K tokens | Fact-grounded, sources cited, confidence bands applied |
+| michael:brainstorming | Need ≥5/6 criteria | <20K tokens | Real tradeoffs, not lists, adversarial thinking evident |
+| michael:executeplan | Need ≥6/7 criteria | <30K tokens | Spec-compliant, no hallucinations, smoke gates verified |
 
 ---
 

@@ -1,13 +1,12 @@
 # Claude Creative Skills
 
-A 4-skill system for deep creative strategy work. Inspired by Rick Rubin, designed for token economy and real-world execution.
+A 3-skill system for deep creative strategy work. Inspired by Rick Rubin, designed for token economy and real-world execution.
 
 ## Skills
 
-1. **deep-research** — Parallel web research with orchestrator + subagents. Adversarial verification, confidence bands, depth-2 decomposition.
-2. **creative-research** — Cross-domain constraint-driven research. Divergence-first, positioning, creative positioning gaps.
-3. **brainstorming** — Recon pass before questions. Worldview-axis approaches. Adversarial pre-pass (reframe/premortem/red-team).
-4. **execute-plan** — Per-task fresh-subagent review. Runtime smoke gates (dev + browser + clean console). Three-tier blocker escalation.
+1. **michael:deepresearch** — Unified fact-finding + positioning discovery. Parallel research agents, confidence bands (well-established/contested/low-confidence), adversarial verification. Returns actionable insights.
+2. **michael:brainstorming** — Convert research into 2-3 real approaches with tradeoffs. Adversarial thinking (reframe/premortem/red-team). Pick one winner with confidence level.
+3. **michael:executeplan** — Ship strategy into reality. Spec → task decomposition → per-task subagent dispatch → spec compliance review → quality review → smoke gate → ship. Confidence signals (🟢/🟡/🔴), blocker escalation.
 
 ## Installation
 
@@ -22,10 +21,9 @@ cp -r . ~/.claude/skills/
 Invoke any skill in Claude Code:
 
 ```
-/invoke deep-research
-/invoke creative-research
-/invoke brainstorming
-/invoke execute-plan
+/michael:deepresearch
+/michael:brainstorming
+/michael:executeplan
 ```
 
 ## Philosophy

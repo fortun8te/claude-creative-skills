@@ -33,7 +33,7 @@ After installation, test skill discovery:
 ### In Claude Code CLI
 
 ```bash
-/skill deep-research
+/skill michael:deepresearch
 ```
 
 Should print the skill metadata + description.
@@ -41,10 +41,9 @@ Should print the skill metadata + description.
 ### In Claude Web / Desktop
 
 Open any conversation. Type `/` and look for:
-- `/deep-research`
-- `/creative-research`
-- `/brainstorming`
-- `/execute-plan`
+- `/michael:deepresearch`
+- `/michael:brainstorming`
+- `/michael:executeplan`
 
 Skills should appear in autocomplete.
 
@@ -81,12 +80,11 @@ Follow the four-scenario test plan in `TEST_PLAN.md`:
 
 Each skill is designed for **depth without bloat**:
 
-- **deep-research**: Parallel subagents + adversarial verification (cheaper than manual research, more thorough than single LLM pass)
-- **creative-research**: Cross-domain precedents + positioning reframes (finds gaps competitors miss)
-- **brainstorming**: Worldview axes + adversarial thinking (prevents groupthink, surfaces real tradeoffs)
-- **execute-plan**: Per-task subagents + runtime verification (prevents hallucination, ensures real delivery)
+- **michael:deepresearch**: Parallel subagents + adversarial verification (combines fact-finding + positioning discovery, cheaper than manual research, more thorough than single LLM pass)
+- **michael:brainstorming**: Worldview approaches + adversarial thinking (prevents groupthink, surfaces real tradeoffs, picks one winner)
+- **michael:executeplan**: Per-task subagents + runtime verification (prevents hallucination, ensures real delivery, smoke gates at every stage)
 
-Use them in sequence: **deep-research → creative-research → brainstorming → execute-plan**
+Use them in sequence: **michael:deepresearch → michael:brainstorming → michael:executeplan**
 
 ---
 
@@ -101,10 +99,9 @@ Use them in sequence: **deep-research → creative-research → brainstorming �
    - Synthesis: Use 4b–9b parameter models
 
 3. **Hard iteration caps**: Each skill has built-in caps:
-   - deep-research: Max 5 subagents, max 20 min per subagent
-   - creative-research: Max 7 precedent searches
-   - brainstorming: Max 3 worldview axes, 1 adversarial pass
-   - execute-plan: Max 2 Tier 2 escalations per task
+   - michael:deepresearch: Max 5 research angles, max 30 min total, parallel agent orchestration
+   - michael:brainstorming: Max 3 worldview approaches, 1 adversarial pass (reframe/premortem/red-team)
+   - michael:executeplan: Max 2 Tier 2 escalations per task, smoke gates at each stage
 
 4. **Reuse across projects**: The research findings from one project can inform strategy in related projects. Copy findings to your notes/wiki.
 

@@ -1,5 +1,5 @@
 ---
-name: execute-plan
+name: michael:executeplan
 description: Use to ship strategy into reality. Takes a locked spec/brief and executes it. Per-task subagents with staged review. Runtime smoke gates (dev + browser + clean console). Blockers escalate 3-tier. Returns shipped work, not drafts.
 ---
 
